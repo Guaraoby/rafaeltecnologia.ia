@@ -23,7 +23,7 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Título de 50px solicitado */
+        /* Título de 50px */
         .title-huge {
             font-size: 50px;
             line-height: 1.1;
@@ -32,7 +32,7 @@
             letter-spacing: -1px;
         }
 
-        /* Descrição de 15px solicitada */
+        /* Descrição de 15px */
         .text-detail {
             font-size: 15px;
             font-weight: 300;
@@ -40,7 +40,7 @@
             color: #ccc;
         }
 
-        /* Efeito Chanfrado (Beveled) nas Fotos */
+        /* Efeito Chanfrado (Beveled) */
         .img-beveled {
             clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
             transition: transform 0.4s ease, clip-path 0.4s ease;
@@ -51,7 +51,7 @@
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
 
-        /* Estilo Moldura Criativa */
+        /* Moldura Criativa */
         .frame-creative {
             border: 10px solid white;
             box-shadow: 15px 15px 0px var(--gold);
@@ -59,7 +59,6 @@
             background: white;
         }
 
-        /* Animação de entrada */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -83,22 +82,14 @@
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0a0a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--gold);
-            border-radius: 10px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
     </style>
 </head>
 <body>
 
-    <!-- Header / Hero Section -->
+    <!-- Hero Section -->
     <section class="min-h-screen flex flex-col justify-center items-center p-6 text-center relative overflow-hidden">
         <div class="absolute inset-0 opacity-20 pointer-events-none">
             <div class="absolute top-10 left-10 w-64 h-64 bg-yellow-600 rounded-full blur-[120px]"></div>
@@ -107,19 +98,17 @@
 
         <h1 class="title-huge font-creative mb-4 reveal active">Rafael <br><span class="text-yellow-500">Tecnologia IA</span></h1>
         <p class="text-detail max-w-2xl mb-8 reveal active" style="transition-delay: 0.2s;">
-            Sua realidade, reimaginada pela inteligência artificial. Transformamos fotos simples em ensaios cinematográficos ultra-realistas. Disney, praias paradisíacas ou o Natal dos sonhos: você escolhe o cenário, nós criamos a magia.
+            Sua realidade, reimaginada pela inteligência artificial. Transformamos fotos simples em ensaios cinematográficos ultra-realistas. Disney, praias paradisíacas ou Natal dos sonhos: você escolhe, nós criamos.
         </p>
         <a href="#orcamento" class="btn-gradient px-8 py-4 rounded-full uppercase tracking-widest reveal active" style="transition-delay: 0.4s;">
             Solicitar Orçamento
         </a>
     </section>
 
-    <!-- Galeria de Estilos -->
+    <!-- Cenários -->
     <section class="py-20 px-6 max-w-7xl mx-auto">
         <h2 class="text-4xl font-creative mb-12 text-center">Nossos Cenários <span class="text-yellow-500">Mágicos</span></h2>
-        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <!-- Item 1: Natal -->
             <div class="reveal">
                 <div class="frame-creative mb-4">
                     <img src="foto inteligência artificial 1.jpg" alt="foto inteligência artificial 1" class="w-full h-80 object-cover img-beveled bg-gray-800" onerror="this.src='https://via.placeholder.com/400x500?text=Natal+IA'">
@@ -127,8 +116,6 @@
                 <h3 class="text-2xl font-bold">Magia de Natal</h3>
                 <p class="text-detail">Ensaios acolhedores com neve e luzes ultra-realistas.</p>
             </div>
-
-            <!-- Item 2: Viagem Exterior -->
             <div class="reveal" style="transition-delay: 0.2s;">
                 <div class="frame-creative mb-4" style="box-shadow: 15px 15px 0px #3b82f6;">
                     <img src="foto inteligência artificial 2.jpg" alt="foto inteligência artificial 2" class="w-full h-80 object-cover img-beveled bg-gray-800" onerror="this.src='https://via.placeholder.com/400x500?text=Disney+IA'">
@@ -136,8 +123,6 @@
                 <h3 class="text-2xl font-bold">Destinos Globais</h3>
                 <p class="text-detail">Da Disney à Torre Eiffel, sem sair de casa.</p>
             </div>
-
-            <!-- Item 3: Praia -->
             <div class="reveal" style="transition-delay: 0.4s;">
                 <div class="frame-creative mb-4" style="box-shadow: 15px 15px 0px #10b981;">
                     <img src="foto inteligência artificial 3.jpg" alt="foto inteligência artificial 3" class="w-full h-80 object-cover img-beveled bg-gray-800" onerror="this.src='https://via.placeholder.com/400x500?text=Praia+IA'">
@@ -152,35 +137,30 @@
     <section class="py-20 bg-stone-900 px-6">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="title-huge mb-12">Escolha seu <br> <span class="text-yellow-500">Pacote</span></h2>
-            
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-black p-8 border border-stone-700 rounded-2xl hover:border-yellow-500 transition reveal">
                     <span class="text-5xl font-bold text-yellow-500">05</span>
                     <p class="mt-4 uppercase font-bold">Fotos IA</p>
-                    <p class="text-detail mt-2">Atualização Básica</p>
                 </div>
                 <div class="bg-black p-8 border border-stone-700 rounded-2xl hover:border-yellow-500 transition reveal" style="transition-delay: 0.1s;">
                     <span class="text-5xl font-bold text-yellow-500">10</span>
                     <p class="mt-4 uppercase font-bold">Fotos IA</p>
-                    <p class="text-detail mt-2">Ensaio Padrão</p>
                 </div>
                 <div class="bg-black p-8 border-2 border-yellow-500 rounded-2xl scale-105 shadow-2xl reveal" style="transition-delay: 0.2s;">
-                    <div class="bg-yellow-500 text-black text-xs font-bold py-1 px-3 inline-block rounded mb-4">MAIS VENDIDO</div>
+                    <div class="bg-yellow-500 text-black text-xs font-bold py-1 px-3 rounded mb-4">MAIS VENDIDO</div>
                     <br>
                     <span class="text-5xl font-bold text-yellow-500">15</span>
                     <p class="mt-4 uppercase font-bold">Fotos IA</p>
-                    <p class="text-detail mt-2">Ensaio Premium</p>
                 </div>
                 <div class="bg-black p-8 border border-stone-700 rounded-2xl hover:border-yellow-500 transition reveal" style="transition-delay: 0.3s;">
                     <span class="text-5xl font-bold text-yellow-500">20</span>
                     <p class="mt-4 uppercase font-bold">Fotos IA</p>
-                    <p class="text-detail mt-2">Coleção Completa</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Showcase Dinâmico -->
+    <!-- Galeria Inferior -->
     <section class="py-20 px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
             <img src="foto inteligência artificial 4.jpg" alt="foto inteligência artificial 4" class="w-full h-64 object-cover img-beveled bg-gray-800 reveal">
@@ -190,15 +170,15 @@
         </div>
     </section>
 
-    <!-- Formulário de Orçamento -->
+    <!-- Formulário -->
     <section id="orcamento" class="py-20 px-6 bg-white text-black">
         <div class="max-w-xl mx-auto text-center">
             <h2 class="text-4xl font-black uppercase mb-4">Solicite seu Orçamento</h2>
-            <p class="mb-8 font-light italic">Sem compromisso. Entraremos em contato via WhatsApp.</p>
+            <p class="mb-8 font-light italic">Preencha os dados para iniciar a conversa no WhatsApp.</p>
             
             <form id="contactForm" class="space-y-4">
-                <input type="text" id="userName" placeholder="Seu Nome Completo" required class="w-full p-4 border-2 border-stone-200 rounded-lg focus:border-yellow-500 outline-none transition">
-                <input type="tel" id="userPhone" placeholder="Seu WhatsApp (Ex: 11 99999-9999)" required class="w-full p-4 border-2 border-stone-200 rounded-lg focus:border-yellow-500 outline-none transition">
+                <input type="text" id="userName" placeholder="Seu Nome Completo" required class="w-full p-4 border-2 border-stone-200 rounded-lg focus:border-yellow-500 outline-none transition text-lg">
+                <input type="tel" id="userPhone" placeholder="Seu WhatsApp (Ex: 67 98133-9514)" required class="w-full p-4 border-2 border-stone-200 rounded-lg focus:border-yellow-500 outline-none transition text-lg">
                 
                 <div class="text-left py-2">
                     <p class="text-sm font-bold mb-2">Qual pacote te interessa?</p>
@@ -210,57 +190,51 @@
                     </div>
                 </div>
 
-                <button type="submit" class="w-full btn-gradient py-4 rounded-lg shadow-lg uppercase font-black tracking-widest mt-4">
-                    Enviar e Falar no WhatsApp
+                <button type="submit" class="w-full btn-gradient py-5 rounded-lg shadow-lg uppercase font-black tracking-widest mt-4 text-xl">
+                    Abrir WhatsApp Agora
                 </button>
             </form>
-            <div id="successMsg" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg font-bold">
-                Redirecionando para o WhatsApp do Rafael...
+            <div id="redirectingMsg" class="hidden mt-6 p-4 bg-yellow-100 text-yellow-800 rounded-lg font-bold">
+                Abrindo conversa no WhatsApp...
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-10 text-center text-stone-500 text-xs uppercase tracking-widest border-t border-stone-800">
-        <p>&copy; 2024 Rafael Tecnologia IA - Todos os direitos reservados</p>
-        <p class="mt-2">Elevando sua imagem com inteligência</p>
+        <p>&copy; 2024 Rafael Tecnologia IA</p>
     </footer>
 
     <script>
-        // --- CONFIGURAÇÃO DO SEU WHATSAPP ---
         const meuNumero = "5567981339514"; 
 
-        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Obter os valores do formulário
             const nome = document.getElementById('userName').value;
             const pacoteElement = document.querySelector('input[name="pacote"]:checked');
             const qtdFotos = pacoteElement ? pacoteElement.value : "15";
 
-            // Mensagem personalizada conforme solicitado
+            // Montagem da mensagem exata solicitada
             const mensagem = `Olá Rafael, como vai? gostaria de solicitar um orçamento do pacote de fotos (${qtdFotos} fotos)! Poderia me informar os valores e métodos de pagamentos? Meu nome é ${nome}.`;
 
-            // Criar link do WhatsApp
+            // Construção do link wa.me
             const urlWhatsApp = `https://wa.me/${meuNumero}?text=${encodeURIComponent(mensagem)}`;
 
-            // Interface
-            this.style.display = 'none';
-            document.getElementById('successMsg').classList.remove('hidden');
+            // Exibir mensagem visual de carregamento
+            this.style.opacity = '0.5';
+            this.querySelector('button').innerText = 'Redirecionando...';
+            document.getElementById('redirectingMsg').classList.remove('hidden');
 
-            // Redirecionar após breve delay
-            setTimeout(() => {
-                window.location.href = urlWhatsApp;
-            }, 1000);
+            // Redirecionamento direto
+            window.location.href = urlWhatsApp;
         });
     </script>
 </body>
