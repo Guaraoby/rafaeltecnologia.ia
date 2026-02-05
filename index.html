@@ -197,8 +197,8 @@
             <p class="mb-8 font-light italic">Sem compromisso. Entraremos em contato via WhatsApp.</p>
             
             <form id="contactForm" class="space-y-4">
-                <input type="text" placeholder="Seu Nome Completo" required class="w-full p-4 border-2 border-stone-200 rounded-lg focus:border-yellow-500 outline-none transition">
-                <input type="tel" id="phone" placeholder="Seu WhatsApp (Ex: 11 99999-9999)" required class="w-full p-4 border-2 border-stone-200 rounded-lg focus:border-yellow-500 outline-none transition">
+                <input type="text" id="userName" placeholder="Seu Nome Completo" required class="w-full p-4 border-2 border-stone-200 rounded-lg focus:border-yellow-500 outline-none transition">
+                <input type="tel" id="userPhone" placeholder="Seu WhatsApp (Ex: 11 99999-9999)" required class="w-full p-4 border-2 border-stone-200 rounded-lg focus:border-yellow-500 outline-none transition">
                 
                 <div class="text-left py-2">
                     <p class="text-sm font-bold mb-2">Qual pacote te interessa?</p>
@@ -211,11 +211,11 @@
                 </div>
 
                 <button type="submit" class="w-full btn-gradient py-4 rounded-lg shadow-lg uppercase font-black tracking-widest mt-4">
-                    Enviar Solicitação
+                    Enviar e Falar no WhatsApp
                 </button>
             </form>
             <div id="successMsg" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg font-bold">
-                Recebemos seu pedido! Em breve Rafael entrará em contato.
+                Redirecionando para o WhatsApp do Rafael...
             </div>
         </div>
     </section>
@@ -227,36 +227,40 @@
     </footer>
 
     <script>
-        // Animação ao rolar a página
-        const observerOptions = {
-            threshold: 0.1
-        };
+        // --- CONFIGURAÇÃO DO SEU WHATSAPP ---
+        const meuNumero = "5567981339514"; 
 
+        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Manipulação do Formulário
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const phone = document.getElementById('phone').value;
             
-            // Simulação de envio
+            // Obter os valores do formulário
+            const nome = document.getElementById('userName').value;
+            const pacoteElement = document.querySelector('input[name="pacote"]:checked');
+            const qtdFotos = pacoteElement ? pacoteElement.value : "15";
+
+            // Mensagem personalizada conforme solicitado
+            const mensagem = `Olá Rafael, como vai? gostaria de solicitar um orçamento do pacote de fotos (${qtdFotos} fotos)! Poderia me informar os valores e métodos de pagamentos? Meu nome é ${nome}.`;
+
+            // Criar link do WhatsApp
+            const urlWhatsApp = `https://wa.me/${meuNumero}?text=${encodeURIComponent(mensagem)}`;
+
+            // Interface
             this.style.display = 'none';
             document.getElementById('successMsg').classList.remove('hidden');
-            
-            console.log("Solicitação para: " + phone);
-            
-            // Opcional: Redirecionar para o WhatsApp
-            // setTimeout(() => {
-            //     window.location.href = "https://wa.me/SEUNUMERO?text=Olá Rafael, gostaria de um orçamento para fotos IA!";
-            // }, 2000);
+
+            // Redirecionar após breve delay
+            setTimeout(() => {
+                window.location.href = urlWhatsApp;
+            }, 1000);
         });
     </script>
 </body>
