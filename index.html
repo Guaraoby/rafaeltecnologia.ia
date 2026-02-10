@@ -17,6 +17,7 @@
             color: white;
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
+            scroll-behavior: smooth; /* Rolagem suave nativa */
         }
 
         .font-creative {
@@ -82,6 +83,17 @@
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
         }
 
+        /* Animação do Scroll Indicator */
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); opacity: 0.8; }
+            50% { transform: translateY(10px); opacity: 0.4; }
+        }
+
+        .scroll-indicator {
+            animation: bounce-slow 2s infinite ease-in-out;
+            cursor: pointer;
+        }
+
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0a0a0a; }
         ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
@@ -103,10 +115,18 @@
         <a href="#orcamento" class="btn-gradient px-8 py-4 rounded-full uppercase tracking-widest reveal active" style="transition-delay: 0.4s;">
             Solicitar Orçamento
         </a>
+
+        <!-- NOVO: Indicador de Scroll -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 scroll-indicator reveal active" style="transition-delay: 0.8s;" onclick="document.getElementById('cenarios').scrollIntoView()">
+            <span class="text-[10px] uppercase tracking-[0.3em] text-yellow-500 font-bold">Explore a Magia</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
     </section>
 
-    <!-- Cenários -->
-    <section class="py-20 px-6 max-w-7xl mx-auto">
+    <!-- Cenários (Adicionado ID para linkar com o scroll) -->
+    <section id="cenarios" class="py-20 px-6 max-w-7xl mx-auto">
         <h2 class="text-4xl font-creative mb-12 text-center">Nossos Cenários <span class="text-yellow-500">Mágicos</span></h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             <div class="reveal">
@@ -239,3 +259,4 @@
     </script>
 </body>
 </html>
+
